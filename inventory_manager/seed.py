@@ -1,5 +1,8 @@
-from .database import Session, init_db
-from .models import Supplier, Product
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from inventory_manager.database import Session, init_db
+from inventory_manager.models import Supplier, Product
 
 def seed_data():
     init_db()
