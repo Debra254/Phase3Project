@@ -1,9 +1,7 @@
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 from datetime import datetime
-
-Base = declarative_base()
+from .database import Base
 
 class Supplier(Base):
     __tablename__ = 'suppliers'
@@ -35,7 +33,3 @@ class Order(Base):
     order_date = Column(DateTime, default=datetime.now)
     
     product = relationship("Product", back_populates="orders")
-
-engine = create_engine('sqlite:///inventory.db')
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)

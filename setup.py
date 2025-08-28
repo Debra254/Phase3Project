@@ -3,10 +3,14 @@ from setuptools import setup, find_packages
 setup(
     name="inventory-manager",
     version="1.0.0",
-    py_modules=['cli', 'models'],
+    packages=find_packages(),
+    install_requires=[
+        'sqlalchemy',
+        'tabulate',
+    ],
     entry_points={
         'console_scripts': [
-            'inventory=cli:main',
+            'inventory=inventory_manager.cli:main',
         ],
     },
 )

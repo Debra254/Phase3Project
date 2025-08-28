@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import argparse
-from models import Session, Product, Supplier, Order
+from .database import Session, init_db
+from .models import Product, Supplier, Order
 from tabulate import tabulate
 
 def add_product(name, price, supplier_id, stock=0):
@@ -65,6 +66,7 @@ def view_orders():
     session.close()
 
 def main():
+    init_db()
     parser = argparse.ArgumentParser(description="Inventory Manager CLI")
     subparsers = parser.add_subparsers(dest='command')
     
