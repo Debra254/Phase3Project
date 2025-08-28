@@ -12,26 +12,32 @@ pipenv shell
 ## Usage
 
 ```bash
-# Add a supplier
-python cli.py add-supplier "ABC Corp" "contact@abc.com"
+# Show help
+python inventory_manager/cli.py --help
 
-# Add a product
-python cli.py add-product "Laptop" 999.99 1 --stock 10
-
-# List products
-python cli.py list-products
-
-# Update stock
-python cli.py update-stock 1 5
-
-# Place order
-python cli.py place-order 1 2
-
-# View orders
-python cli.py view-orders
+# Add suppliers
+python inventory_manager/cli.py add-supplier "ABC Corp" "contact@abc.com"
 
 # List suppliers
-python cli.py list-suppliers
+python inventory_manager/cli.py list-suppliers
+
+# Add products
+python inventory_manager/cli.py add-product "Laptop" 999.99 1 --stock 10
+
+# List products
+python inventory_manager/cli.py list-products
+
+# Update stock
+python inventory_manager/cli.py update-stock 1 5
+
+# Place order
+python inventory_manager/cli.py place-order 1 2
+
+# View orders
+python inventory_manager/cli.py view-orders
+
+# Add sample data
+python inventory_manager/seed.py
 ```
 
 ## Database Schema
