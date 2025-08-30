@@ -1,3 +1,5 @@
+https://drive.google.com/file/d/1Fr2ADPWoM_1Z0uD9NZHjXQqXqEUhQiZG/view?usp=sharing
+
 # Inventory Manager CLI
 
 A command-line application to manage products, suppliers, and orders.
